@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Layout primitives
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.page {
+  position: relative;
+  min-height: 100vh;
+}
+
+main:focus {
+  outline: none;
+}
+
+section {
+  position: relative;
+}
+
+/* — Section intro — */
+.section-intro {
+  display: grid;
+  gap: var(--space-6);
+  margin-bottom: clamp(3rem, 2rem + 4vw, 6rem);
+}
+
+.section-intro--split {
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  align-items: end;
+  gap: var(--space-8);
+}
+
+.section-intro--center {
+  text-align: center;
+  justify-items: center;
+}
+
+.section-intro--center .section-intro__body {
+  max-width: 36rem;
+}
+
+.section-intro__title {
+  font-size: var(--fs-2xl);
+  line-height: 1;
+  color: var(--c-offwhite);
+}
+
+.section-intro__body p {
+  font-size: var(--fs-md);
+  max-width: 34rem;
+}
+
+.section-intro--split .section-intro__body {
+  padding-bottom: var(--space-3);
+}
+
+.section-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(3rem, 2rem + 3vw, 5rem);
+}
+
+@media (max-width: 900px) {
+  .section-intro--split {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+}

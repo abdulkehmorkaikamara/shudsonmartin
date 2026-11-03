@@ -1,0 +1,134 @@
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+.display,
+h1, h2, h3 {
+  font-family: var(--f-display);
+  font-weight: 300;
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-display);
+}
+
+em {
+  font-style: italic;
+}
+
+.label {
+  display: block;
+  font-family: var(--f-body);
+  font-size: var(--fs-xs);
+  font-weight: 400;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--c-text-faint);
+}
+
+.eyebrow {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  font-family: var(--f-body);
+  font-size: var(--fs-xs);
+  font-weight: 400;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--c-grey);
+  margin-bottom: var(--space-6);
+}
+
+.eyebrow__index {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+  color: var(--c-plum-muted);
+}
+
+.eyebrow__index::after {
+  content: '';
+  width: 2.5rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.8;
+}
+
+.lede {
+  font-size: var(--fs-lg);
+  line-height: 1.55;
+  color: var(--c-text-dim);
+  font-weight: 300;
+}
+
+p {
+  color: var(--c-text-dim);
+  text-wrap: pretty;
+}
+
+/* — RevealText — */
+.rt-line {
+  display: block;
+}
+
+.rt-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  /* room for descenders and italic overhang */
+  padding: 0.04em 0.08em 0.1em 0;
+  margin: -0.04em -0.08em -0.1em 0;
+}
+
+.rt-word {
+  display: inline-block;
+  will-change: transform;
+}
+
+.rt-word--em {
+  font-style: italic;
+  color: var(--c-grey);
+}
+
+[data-reveal='scrub'] .rt-mask {
+  overflow: visible;
+}
+
+/* — Inline link with drawn underline — */
+.link-underline {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px;
+  background: linear-gradient(currentColor, currentColor) no-repeat 100% 100% / 0 1px;
+  transition: background-size var(--dur-base) var(--ease-out), color var(--dur-fast) ease;
+}
+
+.link-underline:hover,
+.link-underline:focus-visible {
+  background-position: 0 100%;
+  background-size: 100% 1px;
+  color: var(--c-white);
+}
+
+/* — Drop cap — */
+.dropcap::first-letter {
+  float: left;
+  font-family: var(--f-editorial);
+  font-size: 5.2em;
+  line-height: 0.82;
+  padding: 0.06em 0.12em 0 0;
+  color: var(--c-offwhite);
+}
+
+/* — Hairline — */
+.rule {
+  display: block;
+  width: 100%;
+  max-width: 7rem;
+  height: 1px;
+  background: var(--c-plum-muted);
+  margin: var(--space-6) 0;
+}
+
+.rule--center {
+  margin-inline: auto;
+}

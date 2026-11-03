@@ -1,0 +1,419 @@
+/* ==========================================================================
+   Lifestyle — journal: soft italics, arches, postcards, warm plum light
+   ========================================================================== */
+
+.theme-lifestyle {
+  --arch: 999px 999px 0 0;
+  background:
+    radial-gradient(60% 40% at 100% 30%, rgba(73, 48, 68, 0.18), transparent 70%),
+    var(--c-ink);
+}
+
+.theme-lifestyle .section-intro__title {
+  font-style: italic;
+}
+
+.theme-lifestyle .section-intro__title .rt-word--em {
+  font-style: normal;
+}
+
+/* — Hero ------------------------------------------------------------------ */
+.ls-hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.ls-hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.ls-hero__scale {
+  position: absolute;
+  inset: 0;
+}
+
+.ls-hero__media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 55% at 50% 50%, rgba(14, 14, 16, 0.55), transparent 80%),
+    linear-gradient(180deg, rgba(14, 14, 16, 0.4) 0%, rgba(73, 48, 68, 0.2) 50%, var(--c-ink) 100%);
+}
+
+.ls-hero__content {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-5);
+  padding-top: var(--header-h);
+}
+
+.ls-hero__content .eyebrow {
+  margin-bottom: 0;
+}
+
+.ls-hero__title {
+  font-size: clamp(3.6rem, 1rem + 10vw, 12rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 0.88;
+  color: var(--c-white);
+}
+
+.ls-hero__title .rt-word--em {
+  font-style: normal;
+  color: var(--c-offwhite);
+}
+
+.ls-hero__text {
+  max-width: 36ch;
+  font-size: var(--fs-md);
+  color: var(--c-offwhite);
+}
+
+.ls-hero__journal {
+  position: absolute;
+  left: var(--gutter);
+  right: var(--gutter);
+  bottom: var(--space-6);
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--c-grey);
+}
+
+/* — Intro ----------------------------------------------------------------- */
+.ls-intro {
+  padding-block: var(--section-y);
+}
+
+.ls-intro__inner {
+  max-width: var(--container-narrow);
+  text-align: center;
+}
+
+.ls-ornament {
+  display: block;
+  margin-bottom: var(--space-6);
+  color: var(--c-plum-muted);
+}
+
+.ls-intro__text {
+  font-family: var(--f-display);
+  font-weight: 300;
+  font-style: italic;
+  font-size: var(--fs-xl);
+  line-height: 1.3;
+  color: var(--c-offwhite);
+}
+
+/* — Travel postcards ------------------------------------------------------ */
+.ls-travel {
+  padding-bottom: var(--section-y);
+}
+
+.ls-travel__row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: clamp(260px, 27vw, 420px);
+  gap: clamp(1rem, 0.5rem + 2vw, 2.5rem);
+  margin: 0;
+  padding: var(--space-4) var(--gutter) var(--space-6);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--gutter);
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-plum-muted) transparent;
+}
+
+.ls-travel__row:focus-visible {
+  outline-offset: -4px;
+}
+
+.ls-postcard {
+  scroll-snap-align: start;
+  padding: var(--space-3) var(--space-3) var(--space-5);
+  background: var(--c-ink-2);
+  border: 1px solid var(--c-line);
+  transition: transform 0.8s var(--ease-out), border-color 0.8s ease;
+}
+
+.ls-postcard:nth-child(odd) { rotate: -1.2deg; }
+.ls-postcard:nth-child(even) { rotate: 1deg; translate: 0 2rem; }
+
+.ls-postcard:hover {
+  transform: translateY(-8px);
+  border-color: rgba(128, 106, 121, 0.6);
+}
+
+.ls-postcard__caption {
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-4) var(--space-2) 0;
+}
+
+.ls-postcard__no {
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-wide);
+  color: var(--c-plum-muted);
+}
+
+.ls-postcard__name {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: var(--fs-xl);
+  line-height: 1.05;
+  color: var(--c-offwhite);
+}
+
+/* — Luxury living --------------------------------------------------------- */
+.ls-living {
+  padding-block: var(--section-y);
+  background: var(--c-ink-2);
+}
+
+.ls-living__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(1.5rem, 1rem + 2vw, 3rem);
+  align-items: center;
+}
+
+.ls-living__text {
+  grid-column: 1 / span 5;
+}
+
+.ls-living__title {
+  font-size: var(--fs-2xl);
+  font-style: italic;
+  line-height: 1;
+  color: var(--c-offwhite);
+  margin-bottom: var(--space-6);
+}
+
+.ls-living__text p:last-child {
+  font-size: var(--fs-md);
+  max-width: 32rem;
+}
+
+.ls-living__arch {
+  grid-column: 7 / span 5;
+}
+
+.ls-living__arch .media {
+  border-radius: var(--arch);
+}
+
+.ls-living__wide {
+  grid-column: 2 / span 10;
+  margin-top: var(--space-8);
+}
+
+.ls-living__caption {
+  margin-top: var(--space-4);
+  font-size: var(--fs-sm);
+}
+
+.ls-living__caption .label {
+  display: inline;
+  margin-right: var(--space-3);
+  color: var(--c-plum-muted);
+}
+
+@media (max-width: 900px) {
+  .ls-living__text,
+  .ls-living__arch,
+  .ls-living__wide { grid-column: 1 / -1; }
+  .ls-living__arch { width: 85%; margin-inline: auto; }
+  .ls-living__wide { margin-top: var(--space-4); }
+}
+
+/* — Culture --------------------------------------------------------------- */
+.ls-culture {
+  padding-block: var(--section-y);
+}
+
+.ls-culture__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: auto auto;
+  gap: clamp(1rem, 0.5rem + 2vw, 2.5rem);
+}
+
+.ls-culture__item .media {
+  position: relative;
+  inset: auto;
+}
+
+.ls-culture__item--1 { grid-column: 1 / span 7; grid-row: span 2; }
+.ls-culture__item--1 .media { aspect-ratio: 4 / 5; }
+.ls-culture__item--2 { grid-column: 8 / span 5; }
+.ls-culture__item--2 .media { aspect-ratio: 4 / 3; }
+.ls-culture__item--3 { grid-column: 8 / span 5; }
+.ls-culture__item--3 .media { aspect-ratio: 4 / 3; }
+
+.ls-culture__item figcaption {
+  display: grid;
+  gap: var(--space-1);
+  margin-top: var(--space-3);
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: var(--fs-lg);
+  color: var(--c-offwhite);
+}
+
+.ls-culture__item figcaption .label {
+  font-style: normal;
+  color: var(--c-plum-muted);
+}
+
+@media (max-width: 760px) {
+  .ls-culture__grid { grid-template-columns: 1fr 1fr; }
+  .ls-culture__item--1 { grid-column: 1 / -1; grid-row: auto; }
+  .ls-culture__item--2,
+  .ls-culture__item--3 { grid-column: span 1; }
+  .ls-culture__item--2 .media,
+  .ls-culture__item--3 .media { aspect-ratio: 3 / 4; }
+}
+
+/* — Rituals (arches) ------------------------------------------------------ */
+.ls-rituals {
+  padding-block: var(--section-y);
+  background:
+    radial-gradient(50% 50% at 50% 0%, rgba(73, 48, 68, 0.35), transparent 70%),
+    var(--c-ink-3);
+}
+
+.ls-rituals__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 1rem + 3vw, 4rem);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.ls-ritual:nth-child(2) {
+  margin-top: 4rem;
+}
+
+.ls-ritual__arch {
+  border-radius: var(--arch);
+  margin-bottom: var(--space-5);
+}
+
+.ls-ritual__title {
+  font-size: var(--fs-xl);
+  font-style: italic;
+  color: var(--c-offwhite);
+  margin-bottom: var(--space-3);
+}
+
+.ls-ritual__text {
+  max-width: 30ch;
+  margin-inline: auto;
+  font-size: var(--fs-sm);
+}
+
+@media (max-width: 900px) {
+  .ls-rituals__list { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
+  .ls-ritual:nth-child(2) { margin-top: 0; }
+}
+
+/* — Experiences ----------------------------------------------------------- */
+.ls-experiences {
+  padding-top: var(--section-y);
+}
+
+.ls-stories {
+  margin: 0;
+  padding: 0;
+}
+
+.ls-story {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: center;
+  padding-block: clamp(2rem, 1rem + 3vw, 4rem);
+  max-width: 1760px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.ls-story__media {
+  position: relative;
+  grid-column: 1 / span 9;
+  grid-row: 1;
+  height: clamp(380px, 75vh, 760px);
+  overflow: hidden;
+}
+
+.ls-story__media .media {
+  position: absolute;
+  inset: 0;
+}
+
+.ls-story__card {
+  position: relative;
+  z-index: 1;
+  grid-column: 8 / span 5;
+  grid-row: 1;
+  padding: clamp(1.75rem, 1rem + 2vw, 3.5rem);
+  background: rgba(34, 32, 37, 0.92);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--c-plum-muted);
+}
+
+.ls-story--right .ls-story__media { grid-column: 4 / span 9; }
+.ls-story--right .ls-story__card { grid-column: 1 / span 5; }
+
+.ls-story__no {
+  display: block;
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: var(--fs-xl);
+  line-height: 1;
+  color: var(--c-plum-muted);
+  margin-bottom: var(--space-4);
+}
+
+.ls-story__title {
+  font-size: var(--fs-xl);
+  color: var(--c-offwhite);
+  margin-bottom: var(--space-4);
+}
+
+@media (max-width: 900px) {
+  .ls-story,
+  .ls-story--right { grid-template-columns: 1fr; }
+  .ls-story__media,
+  .ls-story--right .ls-story__media { grid-column: 1; height: 62vh; max-height: 520px; }
+  .ls-story__card,
+  .ls-story--right .ls-story__card {
+    grid-column: 1;
+    grid-row: 2;
+    margin: -4rem var(--space-4) 0;
+  }
+}
+
+/* — Gallery --------------------------------------------------------------- */
+.ls-gallery {
+  padding-block: var(--section-y);
+}
+
+.ls-gallery .gallery__item:nth-child(3n + 2) .media {
+  border-radius: var(--arch);
+}

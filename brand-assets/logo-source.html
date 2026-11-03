@@ -1,0 +1,53 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Jost:wght@400&display=block" rel="stylesheet">
+<style>
+  :root { --ink:#171719; --plum:#806A79; --off:#F1EDF0; --grey:#C5BEC5; }
+  body { margin:0; background:transparent; display:flex; flex-direction:column; gap:40px; padding:40px; }
+  .wm { font-family:'Cormorant Garamond',serif; font-weight:500; letter-spacing:0.34em; line-height:1; margin-right:-0.34em; }
+  .sub { font-family:'Jost',sans-serif; text-transform:uppercase; letter-spacing:0.42em; margin-right:-0.42em; }
+  .rule { height:2px; background:var(--plum); }
+  .center { display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+
+  /* Profile picture: 1080 square, everything inside the circle crop */
+  #profile { width:1080px; height:1080px; background:var(--ink); color:var(--off); position:relative; }
+  #profile .ring { position:absolute; inset:78px; border:2px solid var(--plum); border-radius:50%; opacity:.55; }
+  #profile .wm { font-size:118px; }
+  #profile .wm + .wm { margin-top:26px; }
+  #profile .rule { width:150px; margin:46px 0 40px; }
+  #profile .sub { font-size:26px; color:var(--plum); }
+
+  /* Horizontal wordmark, transparent background */
+  .h { padding:60px 80px; }
+  .h .wm { font-size:120px; }
+  .h .sub { font-size:26px; margin-top:34px; }
+  #wordmark-light { color:var(--off); } #wordmark-light .sub { color:var(--plum); }
+  #wordmark-dark  { color:var(--ink); } #wordmark-dark  .sub { color:#493044; }
+
+  /* LinkedIn banner 1584x396 */
+  #banner { width:1584px; height:396px; background:linear-gradient(110deg,#171719 0%,#222025 60%,#2c2230 100%); color:var(--off); }
+  #banner .wm { font-size:86px; }
+  #banner .rule { width:110px; margin:30px 0 26px; }
+  #banner .sub { font-size:20px; color:var(--grey); }
+
+  /* Facebook cover 1640x624 — text kept in the centre band that survives mobile cropping */
+  #fbcover { width:1640px; height:624px; background:linear-gradient(110deg,#171719 0%,#222025 60%,#2c2230 100%); color:var(--off); }
+  #fbcover .wm { font-size:96px; }
+  #fbcover .rule { width:120px; margin:34px 0 30px; }
+  #fbcover .sub { font-size:22px; color:var(--grey); }
+
+  /* X header 1500x500 — profile picture overlaps bottom-left, so text sits centre/upper */
+  #xheader { width:1500px; height:500px; background:linear-gradient(110deg,#171719 0%,#222025 60%,#2c2230 100%); color:var(--off); justify-content:flex-start; padding-top:150px; box-sizing:border-box; }
+  #xheader .wm { font-size:88px; }
+  #xheader .rule { width:110px; margin:30px 0 26px; }
+  #xheader .sub { font-size:20px; color:var(--grey); }
+</style></head><body>
+  <div id="profile" class="center"><div class="ring"></div>
+    <div class="wm">SHUDSON</div><div class="wm">MARTIN</div>
+    <div class="rule"></div><div class="sub">Studio · Est. 2016</div></div>
+  <div id="wordmark-light" class="h center"><div class="wm">SHUDSONMARTIN</div><div class="sub">Interior · Fashion · Lifestyle</div></div>
+  <div id="wordmark-dark" class="h center"><div class="wm">SHUDSONMARTIN</div><div class="sub">Interior · Fashion · Lifestyle</div></div>
+  <div id="banner" class="center"><div class="wm">SHUDSONMARTIN</div><div class="rule"></div><div class="sub">Interior · Fashion · Lifestyle — Beyond Ordinary</div></div>
+  <div id="fbcover" class="center"><div class="wm">SHUDSONMARTIN</div><div class="rule"></div><div class="sub">Interior · Fashion · Lifestyle — Beyond Ordinary</div></div>
+  <div id="xheader" class="center"><div class="wm">SHUDSONMARTIN</div><div class="rule"></div><div class="sub">Interior · Fashion · Lifestyle — Beyond Ordinary</div></div>
+</body></html>

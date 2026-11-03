@@ -1,0 +1,103 @@
+/* ==========================================================================
+   ShudsonMartin — Design Tokens
+   ========================================================================== */
+
+:root {
+  /* — Colour — */
+  --c-ink: #171719;          /* primary background */
+  --c-ink-2: #222025;        /* secondary background */
+  --c-ink-3: #1c1b1e;        /* between-tone for layering */
+  --c-black: #0e0e10;
+  --c-plum: #493044;         /* deep plum */
+  --c-plum-muted: #806a79;   /* muted plum */
+  --c-grey: #c5bec5;         /* soft grey */
+  --c-offwhite: #f1edf0;
+  --c-white: #ffffff;
+
+  --c-text: var(--c-offwhite);
+  --c-text-dim: rgba(241, 237, 240, 0.66);
+  --c-text-faint: rgba(241, 237, 240, 0.42);
+  --c-line: rgba(197, 190, 197, 0.16);
+  --c-line-strong: rgba(197, 190, 197, 0.32);
+  --c-overlay: linear-gradient(180deg, rgba(14, 14, 16, 0.55) 0%, rgba(14, 14, 16, 0.25) 40%, rgba(14, 14, 16, 0.85) 100%);
+
+  /* — Typography — */
+  --f-display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --f-editorial: 'Bodoni Moda', 'Didot', 'Cormorant Garamond', serif;
+  --f-body: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+
+  --fs-xs: 0.6875rem;   /* 11px — labels */
+  --fs-sm: 0.8125rem;   /* 13px */
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: clamp(1.25rem, 1.1rem + 0.6vw, 1.6rem);
+  --fs-xl: clamp(1.75rem, 1.3rem + 1.8vw, 3rem);
+  --fs-2xl: clamp(2.4rem, 1.6rem + 3.4vw, 5rem);
+  --fs-3xl: clamp(2.8rem, 1.4rem + 6vw, 8.5rem);
+  --fs-hero: clamp(2.7rem, 1rem + 7.4vw, 10rem);
+
+  --lh-tight: 0.92;
+  --lh-snug: 1.12;
+  --lh-body: 1.7;
+
+  --tracking-label: 0.32em;
+  --tracking-wide: 0.18em;
+  --tracking-display: -0.01em;
+
+  /* — Spacing — */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+  --section-y: clamp(5rem, 3rem + 8vw, 11rem);
+
+  /* — Layout — */
+  --gutter: clamp(1.25rem, 0.5rem + 3.2vw, 4rem);
+  --container: 1440px;
+  --container-narrow: 980px;
+  --header-h: 84px;
+  --header-h-scrolled: 68px;
+
+  /* — Shape — */
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-pill: 999px;
+
+  /* — Motion — */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-soft: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --dur-fast: 0.25s;
+  --dur-base: 0.5s;
+  --dur-slow: 0.9s;
+  --dur-xslow: 1.6s;
+
+  /* — Layers — */
+  --z-header: 50;
+  --z-menu: 60;
+  --z-transition: 80;
+  --z-loader: 100;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --header-h: 68px;
+    --header-h-scrolled: 60px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0.01s;
+    --dur-base: 0.01s;
+    --dur-slow: 0.01s;
+    --dur-xslow: 0.01s;
+  }
+}
