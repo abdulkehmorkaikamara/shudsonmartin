@@ -38,7 +38,7 @@ export const fallbackImage: SiteImage = {
 
 const i = (src: string, alt: string, focus?: string): SiteImage => ({ src, alt, focus });
 /** Original ShudsonMartin photography in /public/work. */
-const work = (file: string, alt: string, focus?: string) => i(`/work/${file}.jpg`, alt, focus);
+const work = (file: string, alt: string, focus?: string) => i(`${import.meta.env.BASE_URL}work/${file}.jpg`, alt, focus);
 
 /** The studio's own interior and fashion work, referenced by the groups below. */
 const portfolio = {
